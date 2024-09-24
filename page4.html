@@ -30,12 +30,12 @@
         <h1>My Fourth Heading</h1>
         <p>My Forth Paragraph</p>
         <ul id="album">
-          <li class="photo"><img src="images/winterland1.jpg" alt="" /></li>
+          <!-- <li class="photo"><img src="images/winterland1.jpg" alt="" /></li>
           <li class="photo"><img src="images/winterland2.jpg" alt="" /></li>
           <li class="photo"><img src="images/winterland3.jpg" alt="" /></li>
           <li class="photo"><img src="images/winterland4.jpg" alt="" /></li>
           <li class="photo"><img src="images/winterland5.jpg" alt="" /></li>
-          <li class="photo"><img src="images/winterland6.jpg" alt="" /></li>
+          <li class="photo"><img src="images/winterland6.jpg" alt="" /></li> -->
         </ul>
       </main>
 
@@ -43,5 +43,22 @@
       <footer>&copy; Copyright 2024 My Website Name</footer>
     </div>
     <!-- End Container -->
+    <script>
+      var photos = [];
+      var fileName = [];
+      var imageList = [];
+      var image;
+      var openList = '<li id="photo">';
+      var closeList = "</li>";
+
+      for (var i = 0; i < 6; i++) {
+        fileName.push("winterland" + (i + 1));
+        photos.push('<img src="images/' + fileName[i] + '.jpg">');
+        image = openList + photos[i] + closeList;
+        imageList.push(image);
+      }
+
+      document.getElementById("album").innerHTML = imageList.join(" ");
+    </script>
   </body>
 </html>
